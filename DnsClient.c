@@ -27,13 +27,13 @@ int main(int argc, char *argv[]){
     connect(sock,(struct sockaddr*)&servaddr,sizeof(servaddr));
 
     memset(&buffer,0,BUFFLEN);
-    printf("Enter the message: ");
+    printf("Iveskite zinute: ");
     fgets(buffer, BUFFLEN-4, stdin);
     strcat(buffer,"\r\n\r\n");
     send(sock,buffer,strlen(buffer),0);
     memset(&buffer,0,BUFFLEN);
     recv(sock,buffer,BUFFLEN,0);
-    printf("Server sent: %s\n", buffer);
+    printf("Serveris atsiunte: %s\n", buffer);
     closesocket(sock);
     return 0;
 }
